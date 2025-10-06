@@ -1,0 +1,19 @@
+{
+  "name": "atvdbfood",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cls && nodemon server.js",
+    "studio": "npx prisma studio"
+  },
+  "keywords": ["Banco de dadpos",  "prisma", "SENAI"],
+  "author": "Fabio Henrique R.  Trevizolli",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.16.3",
+    "prisma": "^6.16.3"
+  }
+}
