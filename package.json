@@ -8,12 +8,19 @@
     "dev": "cls && nodemon server.js",
     "studio": "npx prisma studio"
   },
-  "keywords": ["Banco de dadpos",  "prisma", "SENAI"],
+  "keywords": [
+    "Banco de dadpos",
+    "prisma",
+    "SENAI"
+  ],
   "author": "Fabio Henrique R.  Trevizolli",
   "license": "MIT",
   "description": "",
   "dependencies": {
     "@prisma/client": "^6.16.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
     "prisma": "^6.16.3"
   }
 }
