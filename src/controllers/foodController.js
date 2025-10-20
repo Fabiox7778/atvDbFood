@@ -27,28 +27,36 @@ export const listarTodos = async (req, res) => {
 }
 
 export const listarUm = async (req, res) => {
-    try {
-        const { id } = parsetInt(req.params.id);
-        const comida = await foodModel.encontreUm(id);
+    try {
+        const id = parseInt(req.params.id);
 
-        if(!comida) {
-            res.status(404).json({
-                erro:'Comida não encontrada.',
-                mensagem: `Verifique o id da comida.`,
-                id: id  
+        if (isNaN(id)) {
+            return res.status(400).json({
+                erro: 'ID inválido.',
+                mensagem: 'O ID fornecido não é um número.'
             });
         }
 
-        res.status(200).json({
-            mensagem: "Comida encontrada com sucesso.",
-            comida
-        });
-        
-    } catch (error) {
-        res.status(500).json({
-            error: "Erro interno do servidor.",
-            details: error.message,
-            status: 500
-        });
-    }
+        const comida = await foodModel.encontreUm(id);
+
+        if (!comida) {
+            return res.status(404).json({
+                erro:'Comida não encontrada.',
+                mensagem: `Verifique o id da comida.`,
+                id: id  
+            });
+        }
+
+        res.status(200).json({
+            mensagem: "Comida encontrada com sucesso.",
+            comida
+        });
+        
+    } catch (error) {
+        res.status(500).json({
+            error: "Erro interno do servidor.",
+            details: error.message,
+            status: 500
+        });
+    }
 }
