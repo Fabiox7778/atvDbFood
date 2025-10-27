@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cls && nodemon server.js",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "seed": "node prisma/seed.js"
   },
   "keywords": [
     "Banco de dadpos",
